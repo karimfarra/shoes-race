@@ -19,14 +19,29 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Login from './Components/login';
 import LoginForm from './Components/LoginForm';
+import Register from './Components/Register';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {DrawerNavigator} from 'react-navigation';
+import MainPage from './Components/mainpage';
 const App = () => {
+  const Stack = createStackNavigator();
   return (
     <>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="login" component={Login} />
+          <Stack.Screen
+            name="login"
+            component={Login}
+            options={{headerShown: true}}
+          />
+          <Stack.Screen name="Register" component={Register} />
+          <Stack.Screen
+            name="loginForm"
+            component={MainPage}
+            options={{headerShown: false}}
+          />
+          {/*  <Stack.Screen name="main" component={MainPage} /> */}
         </Stack.Navigator>
       </NavigationContainer>
     </>
@@ -40,8 +55,8 @@ const App = () => {
 //   );
 // };
 
-// export default App;
-export default createAppContainer(App);
+export default App;
+// export default createAppContainer(App);
 
 const styles = StyleSheet.create({
   scrollView: {

@@ -9,34 +9,33 @@ import {
   placeholderTextColor,
   KeyboardAvoidingView,
 } from 'react-native';
+import {withOrientation} from 'react-navigation';
 
 export default class LoginForm extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/*  <Image
-          source={{
-            uri:
-              'https://previews.123rf.com/images/seregasss435/seregasss4351905/seregasss435190500093/122800987-shoelace-of-sneaker-shoes-tying-shoelaces-fastening-rope-stitch-concept-schemes-of-tying-shoelaces-s.jpg',
-          }}
-          style={styles.logo}
-        /> */}
-        <Text>Username</Text>
-        {/*  <View style={styles.inputContainer}>
+        <View>
+          <Text style={styles.title}>LOGIN</Text>
+        </View>
+        <View style={styles.inputContainer}>
           <TextInput
-            placeholderTextColor="black"
-            placeholder="Username"
             style={styles.input}
+            placeholder="username"
+            placeholderTextColor="rgba(225,255,225,0.7)"
+            onChangeText={text => this.setInputValue(text)}
+            value={this.inputValue}
           />
+        </View>
+        <View style={styles.inputContainer}>
           <TextInput
-            placeholderTextColor="black"
-            placeholder="Password"
             style={styles.input}
+            placeholder="password"
+            placeholderTextColor="rgba(225,255,225,0.7)"
+            onChangeText={text => this.setInputValue(text)}
+            value={this.inputValue}
           />
-          <TouchableOpacity>
-            <Text style={styles.buttonText}>LOGIN</Text>
-          </TouchableOpacity>
-        </View> */}
+        </View>
       </View>
     );
   }
@@ -56,12 +55,12 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    backgroundColor: 'white',
-    marginBottom: 20,
-    paddingHorizontal: 10,
-    color: '#FFF',
-    width: 800,
-    opacity: 50,
+    backgroundColor: '#ffbe76',
+    paddingLeft: 2,
+    paddingRight: 2,
+    width: 300,
+    opacity: 1.9,
+    marginBottom: 10,
   },
   buttonText: {
     fontSize: 20,
@@ -73,5 +72,10 @@ const styles = StyleSheet.create({
   inputContainer: {
     display: 'flex',
     justifyContent: 'flex-end',
+  },
+  title: {
+    marginBottom: 40,
+    color: 'white',
+    fontSize: 30,
   },
 });
