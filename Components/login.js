@@ -29,20 +29,16 @@ export default class login extends Component {
           <Text style={styles.title}>Run, run with others.</Text>
         </View>
         <View>
-          <TouchableOpacity style={styles.buttonContainer}>
-            <Text
-              style={styles.buttonText}
-              onPress={() => navigate('LoginForm')}>
-              LOGIN
-            </Text>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => navigate('loginform')}>
+            <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buttonContainer2}>
-            <Text
-              style={styles.buttonText1}
-              onPress={() => navigate('Register')}>
-              REGISTER
-            </Text>
+          <TouchableOpacity
+            style={styles.buttonContainer2}
+            onPress={() => navigate('Register')}>
+            <Text style={styles.buttonText1}>REGISTER</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -11,32 +11,49 @@ import {
 } from 'react-native';
 
 export default class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: '',
+    };
+  }
+
+  setInputValue = text => {
+    this.setState({
+      inputValue: text,
+    });
+  };
+
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        {/*  <Image
-          source={{
-            uri:
-              'https://previews.123rf.com/images/seregasss435/seregasss4351905/seregasss435190500093/122800987-shoelace-of-sneaker-shoes-tying-shoelaces-fastening-rope-stitch-concept-schemes-of-tying-shoelaces-s.jpg',
-          }}
-          style={styles.logo}
-        /> */}
-        <Text>Username</Text>
-        {/*  <View style={styles.inputContainer}>
+        <View style={styles.inputContainer}>
           <TextInput
-            placeholderTextColor="black"
+            style={styles.input}
             placeholder="Username"
-            style={styles.input}
+            placeholderTextColor="rgb(0,0,0)"
+            onChangeText={text => this.setInputValue(text)}
+            value={this.inputValue}
           />
+        </View>
+
+        <View style={styles.inputContainer}>
           <TextInput
-            placeholderTextColor="black"
-            placeholder="Password"
             style={styles.input}
+            placeholder="Password"
+            placeholderTextColor="rgba(0,0,0,0.7)"
+            onChangeText={text => this.setInputValue(text)}
+            value={this.inputValue}
           />
-          <TouchableOpacity>
-            <Text style={styles.buttonText}>LOGIN</Text>
+        </View>
+        <View style={styles.ViewTouch}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => navigate('main')}>
+            <Text style={styles.buttonText}>LOG IN</Text>
           </TouchableOpacity>
-        </View> */}
+        </View>
       </View>
     );
   }
@@ -55,13 +72,16 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   input: {
-    height: 40,
-    backgroundColor: 'white',
     marginBottom: 20,
     paddingHorizontal: 10,
-    color: '#FFF',
     width: 800,
     opacity: 50,
+
+    height: 40,
+    textAlign: 'center',
+    borderWidth: 1,
+    borderColor: '#FF9800',
+    backgroundColor: '#fff',
   },
   buttonText: {
     fontSize: 20,
@@ -70,6 +90,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 20,
   },
+  textInput: {},
   inputContainer: {
     display: 'flex',
     justifyContent: 'flex-end',
