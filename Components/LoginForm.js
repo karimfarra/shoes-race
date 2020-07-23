@@ -9,6 +9,7 @@ import {
   placeholderTextColor,
   KeyboardAvoidingView,
 } from 'react-native';
+import {withOrientation} from 'react-navigation';
 
 export default class LoginForm extends Component {
   constructor(props) {
@@ -94,5 +95,10 @@ const styles = StyleSheet.create({
   inputContainer: {
     display: 'flex',
     justifyContent: 'flex-end',
+  },
+  title: {
+    marginBottom: 40,
+    color: 'white',
+    fontSize: 30,
   },
 });

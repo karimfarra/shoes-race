@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   placeholderTextColor,
   KeyboardAvoidingView,
+  FlatList,
 } from 'react-native';
 
 export default class Leaderboards extends Component {
